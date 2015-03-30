@@ -1,0 +1,134 @@
+﻿@model AirplaneTrafficManagement.Models.ClientViewModel
+@{
+    ViewBag.Title = "Client";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Display all the Clients.</h2>
+</hgroup>
+
+
+@*@using (Html.BeginForm("SearchMovie", "Movie"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <fieldset>
+            <legend>Search</legend>
+
+            <p>Movie type</p>
+
+            <p>
+                @Html.DropDownListFor(model => model.genre, new List<SelectListItem>{
+                        new SelectListItem{ Text="Select", Value =   "0"},
+                        new SelectListItem{ Text="Action", Value = "Action" },
+                        new SelectListItem{ Text="Comedy", Value = "Comedy"},
+                        new SelectListItem{ Text="Fantasy", Value = "Fantasy"},
+                        new SelectListItem{ Text="Science-Fiction", Value = "Science-Fiction"},
+                        new SelectListItem{ Text="Drama", Value = "Drama"},
+                        new SelectListItem{ Text="Horror", Value = "Horror"},
+                        new SelectListItem{ Text="Psychological", Value = "Psychological"}
+                     })
+        </p>
+        <ol>
+            <li>
+                @Html.LabelFor(p => p._searchValue)
+                @Html.TextBoxFor(p => p._searchValue, new { id = "_searchValue" })
+            </li>
+        </ol>
+
+        <input type="submit" value="Search" />
+
+        <button id="button" value="submit" onclick="ajaxCall();return false">Count </button>
+    </fieldset>
+        <div id="divNoOfMovies"></div>*@
+
+
+
+<style>
+    table, th, td {
+        border: 2px solid black;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+</style>
+
+
+<table style="width: 800px">
+    <tr>
+        <td><b>Id Client</b></td>
+        <td><b>First Name</b></td>
+        <td><b>Last Name</b></td>
+        <td><b>Username</b></td>
+        <td><b>Password</b></td>
+        <td><b>E-mail</b></td>
+        <td><b>Phone</b></td>
+        <td><b>City</b></td>
+        <td><b>Options</b></td>
+    </tr>
+
+    @foreach (var item in Model._clientList)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idClient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @*@{var session = new Common.WebSessionContext();
+                    }
+
+                    @if (session.Admin == true)
+                    {*@
+
+                <p>@Html.ActionLink("Edit Client", "EditClient", "Client", new { id = item.idClient }, null) </p>
+                <p>@Html.ActionLink("Delete Client", "DeleteClient", "Client", new { id = item.idClient }, null)</p>
+                <p>@Html.ActionLink("Add Client", "CreateClient", "Client", null) </p>
+                @*<p>@Html.ActionLink("Movie Details", "movieDetail", "Flight", new { id_detail = item.idFlight }, null)</p>*@
+                @*}
+
+                    else
+                    {*@
+
+                @*@Html.ActionLink("Flight Details", "movieDetail", "Flight", new { id_detail = item.idFlight }, null)
+                    <p>@Html.ActionLink("Reserve Ticket", "CreateTicket", "Flight", new { id = item.idFlight }, null)  </p>*@
+
+                @*}*@
+
+            </td>
+        </tr>
+    }
+
+</table>
+@using (Html.BeginForm("Index", "Flight"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <input type="submit" value="Back" />
+}
+
+

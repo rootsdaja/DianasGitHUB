@@ -1,0 +1,85 @@
+﻿@model AirplaneTrafficManagement.Models.FlightViewModel
+@{
+    ViewBag.Title = "EditFlight";
+}
+
+<h2>EditFlight</h2>
+
+@using (Html.BeginForm("saveChanges", "Flight"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idAirport)
+    @Html.HiddenFor(model => model.idRoute)
+    @Html.HiddenFor(model => model.idFlight)
+
+
+    <fieldset>
+        <legend>Edit Parameters</legend>
+        <ol>
+            @*<li>
+                @Html.LabelFor(p=>p.idFlight)
+                @Html.DisplayFor(p => p.idFlight)
+            </li>*@
+            @*<li>
+                @Html.LabelFor(p=> p.idFlight)
+            </li>*@
+            <li>
+                @*@Html.DropDownListFor(m => m.departureFrom, new SelectList
+                    (Model.FlightList, "Key", "Value"))*@
+                @*@Html.DropDownListFor(model => model.departureFrom,
+                Model.FlightList.Select(depart => new SelectListItem() 
+                { 
+                Text = depart,
+                Value = depart,
+                Selected = depart = Model.FlightList 
+                })*@
+                    
+                @Html.TextBoxFor(p => p.departureFrom)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.arriveAt)
+                @Html.TextBoxFor(p=> p.arriveAt)
+            </li>
+            <li>
+              <div class="editor-label">
+                  @Html.LabelFor(model => model.departOn)
+              </div>
+                <div>
+                    @Html.EditorFor(model => model.departOn)
+                    @Html.ValidationMessageFor(model => model.departOn)
+                </div>
+            </li>
+            <li>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.returnOn)
+                </div>
+                <div>
+                    @Html.EditorFor(model => model.returnOn)
+                    @Html.ValidationMessageFor(model => model.returnOn)
+                </div>
+            </li>
+            <li>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.time)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.time)
+                    @Html.ValidationMessageFor(model => model.time)
+                </div>
+            </li>
+        </ol>
+
+        <input type="submit" value="Submit"/>
+    </fieldset>
+}
+
+@using (Html.BeginForm("Index", "Flight"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idFlight)
+
+    <input type="submit" value="Back" />
+}
+

@@ -1,0 +1,73 @@
+﻿@model AirplaneTrafficManagement.Models.FlightViewModel
+@{
+    ViewBag.Title = "Add Flight";
+}
+
+
+@using (Html.BeginForm("AddFlight", "Flight"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idFlight)
+    @Html.HiddenFor(model => model.idRoute)
+    @Html.HiddenFor(model => model.idAirport)
+
+
+    <fieldset>
+        <legend>Add Flights Form </legend>
+        <ol>
+    <li>
+     @Html.LabelFor(m => m.departureFrom)
+    @Html.TextBoxFor(m => m.departureFrom)
+         </li>
+ 
+    <li>
+        @Html.LabelFor(m => m.arriveAt)
+        @Html.TextBoxFor(m => m.arriveAt)
+    </li>
+
+    <li>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.departOn)
+        </div>
+
+        <div class="editor-filed">
+            @Html.EditorFor(model => model.departOn)
+            @Html.ValidationMessageFor(model => model.departOn)
+        </div>
+    </li>
+            <li>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.returnOn)
+                </div>
+
+                <div class="editor-filed">
+                    @Html.EditorFor(model => model.returnOn)
+                    @Html.ValidationMessageFor(model => model.returnOn)
+                </div>
+            </li>
+            <li>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.time)
+                </div>
+
+                <div class="editor-filed">
+                    @Html.EditorFor(model => model.time)
+                    @Html.ValidationMessageFor(model => model.time)
+                </div>
+
+            </li>
+    </ol>
+    </fieldset>
+    
+    <button id="button" value="Add">Add Flight</button>
+
+}
+   
+@using (Html.BeginForm("Index", "Flight"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <input type="submit" value="Back" />
+}

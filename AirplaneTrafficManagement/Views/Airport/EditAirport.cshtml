@@ -1,0 +1,65 @@
+﻿@model AirplaneTrafficManagement.Models.AirportViewModel
+@{
+    ViewBag.Title = "Edit Airport";
+}
+<h2>Edit Airline</h2>
+
+@using (Html.BeginForm("saveChanges", "Airport"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idAirport)
+
+    <fieldset>
+        <legend>Edit Parameters</legend>
+        <ol>
+            @*<li>
+                    @Html.LabelFor(p=>p.idFlight)
+                    @Html.DisplayFor(p => p.idFlight)
+                </li>*@
+            @*<li>
+                    @Html.LabelFor(p=> p.idFlight)
+                </li>*@
+            @*<li>*@
+            @*@Html.DropDownListFor(m => m.departureFrom, new SelectList
+                (Model.FlightList, "Key", "Value"))*@
+            @*@Html.DropDownListFor(model => model.departureFrom,
+                Model.FlightList.Select(depart => new SelectListItem()
+                {
+                Text = depart,
+                Value = depart,
+                Selected = depart = Model.FlightList
+                })*@
+
+            @*@Html.TextBoxFor(p => p.companyName)
+                </li>*@
+            <li>
+                @Html.LabelFor(p => p.airportName)
+                @Html.TextBoxFor(p => p.airportName)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.city)
+                @Html.TextBoxFor(model => model.city)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.country)
+                @Html.TextBoxFor(model => model.country)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.state)
+                @Html.TextBoxFor(model => model.state)
+            </li></ol>
+
+        <input type="submit" value="Submit" />
+    </fieldset>
+}
+
+@using (Html.BeginForm("Index", "Airport"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idAirport)
+
+    <input type="submit" value="Back" />
+}
+

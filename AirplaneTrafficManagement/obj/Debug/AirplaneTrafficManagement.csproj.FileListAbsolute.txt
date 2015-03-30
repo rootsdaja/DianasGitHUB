@@ -1,0 +1,128 @@
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.dll.config
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.pdb
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Antlr3.Runtime.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\EntityFramework.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\EntityFramework.SqlServer.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Mvc.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Web.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Newtonsoft.Json.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Owin.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Helpers.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Mvc.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Optimization.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Razor.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.Deployment.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.Razor.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\WebGrease.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\EntityFramework.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\EntityFramework.SqlServer.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.pdb
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Mvc.pdb
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Mvc.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Web.pdb
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Web.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Helpers.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Mvc.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Optimization.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Razor.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.Deployment.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.Razor.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Antlr3.Runtime.pdb
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Newtonsoft.Json.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.dll
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.pdb
+C:\Users\diana.avirvarei\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.csprojResolveAssemblyReference.cache
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.csprojResolveAssemblyReference.cache
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.dll.config
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.pdb
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Antlr3.Runtime.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\EntityFramework.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\EntityFramework.SqlServer.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Mvc.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Web.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.Core.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Cookies.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Facebook.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Google.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.OAuth.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Twitter.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Web.Infrastructure.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Newtonsoft.Json.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Owin.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Helpers.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Mvc.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Optimization.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Razor.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.Deployment.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.Razor.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\WebGrease.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\EntityFramework.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\EntityFramework.SqlServer.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.pdb
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Mvc.pdb
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Mvc.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Web.pdb
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\LightInject.Web.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Helpers.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Mvc.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Optimization.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.Razor.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.Deployment.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\System.Web.WebPages.Razor.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Antlr3.Runtime.pdb
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Newtonsoft.Json.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.Core.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Facebook.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Cookies.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.OAuth.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Google.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.Twitter.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.dll
+E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.pdb

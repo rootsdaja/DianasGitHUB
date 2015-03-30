@@ -1,0 +1,60 @@
+﻿@model AirplaneTrafficManagement.Models.ClientViewModel
+@{
+    ViewBag.Title = "Edit Client";
+}
+
+<h2>EditFlight</h2>
+
+@using (Html.BeginForm("saveChanges", "Client"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idClient)
+
+
+    <fieldset>
+        <legend>Edit Parameters</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(p => p.firstName)
+                @Html.TextBoxFor(p => p.firstName)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.lastName)
+                @Html.TextBoxFor(p => p.lastName)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.username)
+                @Html.TextBoxFor(p => p.username)  
+            </li>
+            <li>
+                @Html.LabelFor(p => p.password)
+                @Html.TextBoxFor(p => p.password)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.email)
+                @Html.TextBoxFor(p => p.email)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.phone)
+                @Html.TextBoxFor(p => p.phone)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.city)
+                @Html.TextBoxFor(p => p.city)
+            </li>
+        </ol>
+
+        <input type="submit" value="Submit" />
+    </fieldset>
+}
+
+@using (Html.BeginForm("Index", "Flight"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idClient)
+
+    <input type="submit" value="Back" />
+}
+

@@ -1,0 +1,72 @@
+﻿@model AirplaneTrafficManagement.Models.RouteViewModel
+@{
+    ViewBag.Title = "Route Search Page";
+}
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Display all the Routes.</h2>
+</hgroup>
+
+<style>
+    table, th, td {
+        border: 2px solid black;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+</style>
+
+<table style="width: 800px">
+    <tr>
+        <td><b>Id Route</b></td>
+        <td><b>Leaving From</b></td>
+        <td><b>Going To</b></td>
+        <td><b>Leaving Hour</b></td>
+        <td><b>Arrival Hour</b></td>
+        <td><b>Options</b></td>
+    </tr>
+
+    @foreach (var item in Model._routeList)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idRoute)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.leavingFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.goingTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.leavingHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.arrivalHour)
+            </td>
+            <td>
+                @*@{var session = new Common.WebSessionContext();
+                    }
+
+                    @if (session.Admin == true)
+                    {*@
+                <p>@Html.ActionLink("Edit Route", "EditRoute", "Route", new { id = item.idRoute }, null) </p>
+                <p>@Html.ActionLink("Delete Route", "DeleteRoute", "Route", new { id = item.idRoute }, null)</p>
+                <p>@Html.ActionLink("Add Route", "CreateRoute", "Route", null) </p>
+
+                @*<p>@Html.ActionLink("Movie Details", "movieDetail", "Flight", new { id_detail = item.idFlight }, null)</p>*@
+                @*}
+
+                    else
+                    {*@
+                @*@Html.ActionLink("Flight Details", "movieDetail", "Flight", new { id_detail = item.idFlight }, null)
+                    <p>@Html.ActionLink("Reserve Ticket", "CreateTicket", "Flight", new { id = item.idFlight }, null)  </p>*@
+                @*}*@
+            </td>
+        </tr>
+    }
+</table>
+
+
+

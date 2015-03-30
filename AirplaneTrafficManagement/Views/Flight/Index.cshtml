@@ -1,0 +1,131 @@
+﻿@model AirplaneTrafficManagement.Models.FlightViewModel
+@{
+    ViewBag.Title = "Flights Search Page";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Display all the flights.</h2>
+</hgroup>
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Display Airlines", "Index", "Airline")</li>
+        <li>@Html.ActionLink("Display Airports", "Index", "Airport")</li>
+        <li>@Html.ActionLink("Display Clients", "Index", "Client")</li>
+    </ul>
+</div>
+
+        @*@using (Html.BeginForm("SearchMovie", "Movie"))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+
+                <fieldset>
+                    <legend>Search</legend>
+
+                    <p>Movie type</p>
+
+                    <p>
+                        @Html.DropDownListFor(model => model.genre, new List<SelectListItem>{
+                                new SelectListItem{ Text="Select", Value =   "0"},
+                                new SelectListItem{ Text="Action", Value = "Action" },
+                                new SelectListItem{ Text="Comedy", Value = "Comedy"},
+                                new SelectListItem{ Text="Fantasy", Value = "Fantasy"},
+                                new SelectListItem{ Text="Science-Fiction", Value = "Science-Fiction"},
+                                new SelectListItem{ Text="Drama", Value = "Drama"},
+                                new SelectListItem{ Text="Horror", Value = "Horror"},
+                                new SelectListItem{ Text="Psychological", Value = "Psychological"}
+                             })
+                </p>
+                <ol>
+                    <li>
+                        @Html.LabelFor(p => p._searchValue)
+                        @Html.TextBoxFor(p => p._searchValue, new { id = "_searchValue" })
+                    </li>
+                </ol>
+
+                <input type="submit" value="Search" />
+
+                <button id="button" value="submit" onclick="ajaxCall();return false">Count </button>
+            </fieldset>
+                <div id="divNoOfMovies"></div>*@
+
+
+
+        <style>
+            table, th, td {
+                border: 2px solid black;
+            }
+
+            th, td {
+                padding: 15px;
+            }
+        </style>
+
+
+        <table style="width: 800px">
+            <tr>
+                <td><b>Id Flight</b></td>
+                <td><b>Departure From</b></td>
+                <td><b>Arrive At</b></td>
+                <td><b>Depart On</b></td>
+                <td><b>Return On</b></td>
+                <td><b>Time</b></td>
+                <td><b>Options</b></td>
+            </tr>
+
+
+            @foreach (var item in Model._flightList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idFlight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.departureFrom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.arriveAt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.departOn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.returnOn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.time)
+                    </td>
+                    <td>
+                        @*@{var session = new Common.WebSessionContext();
+                            }
+
+                            @if (session.Admin == true)
+                            {*@
+
+                        <p>@Html.ActionLink("Edit Flight", "EditFlight", "Flight", new { id = item.idFlight }, null) </p>
+                        <p>@Html.ActionLink("Delete Flight", "DeleteFlight", "Flight", new { id = item.idFlight }, null)</p>
+                        <p>@Html.ActionLink("Add Flight", "CreateFlight", "Flight", null) </p>
+                       
+                        @*<p>@Html.ActionLink("Movie Details", "movieDetail", "Flight", new { id_detail = item.idFlight }, null)</p>*@
+                        @*}
+
+                            else
+                            {*@
+
+                        @*@Html.ActionLink("Flight Details", "movieDetail", "Flight", new { id_detail = item.idFlight }, null)
+                            <p>@Html.ActionLink("Reserve Ticket", "CreateTicket", "Flight", new { id = item.idFlight }, null)  </p>*@
+
+                        @*}*@
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+﻿@model AirplaneTrafficManagement.Models.ClientViewModel
+@{
+    ViewBag.Title = "Add Client";
+}
+
+
+@using (Html.BeginForm("AddClient", "Client"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idClient)
+
+    <fieldset>
+        <legend>Add Clients Form </legend>
+        <ol>
+            <li>
+                @Html.LabelFor(p => p.firstName)
+                @Html.TextBoxFor(p => p.firstName)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.lastName)
+                @Html.TextBoxFor(p => p.lastName)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.username)
+                @Html.TextBoxFor(p => p.username)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.password)
+                @Html.TextBoxFor(p => p.password)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.email)
+                @Html.TextBoxFor(p => p.email)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.phone)
+                @Html.TextBoxFor(p => p.phone)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.city)
+                @Html.TextBoxFor(p => p.city)
+            </li>
+        </ol>
+    </fieldset>
+
+    <button id="button" value="Add">Add Client</button>
+
+}
+
+@using (Html.BeginForm("Index", "Client"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <input type="submit" value="Back" />
+}

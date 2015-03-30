@@ -1,0 +1,56 @@
+﻿@model AirplaneTrafficManagement.Models.RouteViewModel
+@{
+    ViewBag.Title = "Add Route";
+}
+
+@using (Html.BeginForm("AddRoute", "Route"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idRoute)
+
+
+    <fieldset>
+        <legend>Add Route Form </legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.leavingFrom)
+                @Html.TextBoxFor(m => m.leavingFrom)
+            </li>
+
+            <li>
+                @Html.LabelFor(m => m.goingTo)
+                @Html.TextBoxFor(m => m.goingTo)
+            </li>
+            <li>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.leavingHour)
+                </div>
+                <div class="editor-filed">
+                    @Html.EditorFor(model => model.leavingHour)
+                    @Html.ValidationMessageFor(model => model.leavingHour)
+                </div>
+            </li>
+            <li>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.arrivalHour)
+                </div>
+                <div class="editor-filed">
+                    @Html.EditorFor(model => model.arrivalHour)
+                    @Html.ValidationMessageFor(model => model.arrivalHour)
+                </div>
+            </li>
+        </ol>
+    </fieldset>
+
+    <button id="button" value="Add">Add Route</button>
+
+}
+
+@using (Html.BeginForm("Index", "Route"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <input type="submit" value="Back" />
+}

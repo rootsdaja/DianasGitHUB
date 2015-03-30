@@ -1,0 +1,58 @@
+﻿@model AirplaneTrafficManagement.Models.AirlineViewModel
+@{
+    ViewBag.Title = "Edit Airline";
+}
+<h2>Edit Airline</h2>
+
+@using (Html.BeginForm("saveChanges", "Airline"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idAirline)
+
+    <fieldset>
+        <legend>Edit Parameters</legend>
+        <ol>
+            @*<li>
+                    @Html.LabelFor(p=>p.idFlight)
+                    @Html.DisplayFor(p => p.idFlight)
+                </li>*@
+            @*<li>
+                    @Html.LabelFor(p=> p.idFlight)
+                </li>*@
+            @*<li>*@
+                @*@Html.DropDownListFor(m => m.departureFrom, new SelectList
+                    (Model.FlightList, "Key", "Value"))*@
+                @*@Html.DropDownListFor(model => model.departureFrom,
+                    Model.FlightList.Select(depart => new SelectListItem()
+                    {
+                    Text = depart,
+                    Value = depart,
+                    Selected = depart = Model.FlightList
+                    })*@
+
+                @*@Html.TextBoxFor(p => p.companyName)
+            </li>*@
+            <li>
+                @Html.LabelFor(p => p.companyName)
+                @Html.TextBoxFor(p => p.companyName)
+            </li>
+            <li>
+                    @Html.LabelFor(model => model.logo)
+                    @Html.TextBoxFor(model => model.logo)
+            </li>
+        </ol>
+
+        <input type="submit" value="Submit" />
+    </fieldset>
+}
+
+@using (Html.BeginForm("Index", "Airline"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idAirline)
+
+    <input type="submit" value="Back" />
+}
+

@@ -1,0 +1,49 @@
+﻿@model AirplaneTrafficManagement.Models.AirportViewModel
+@{
+    ViewBag.Title = "Add Airport";
+}
+
+
+@using (Html.BeginForm("AddAirport", "Airport"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idAirport)
+
+
+    <fieldset>
+        <legend>Add Airport Form </legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.airportName)
+                @Html.TextBoxFor(m => m.airportName)
+            </li>
+
+            <li>
+                @Html.LabelFor(m => m.city)
+                @Html.TextBoxFor(m => m.city)
+            </li>
+
+            <li>
+                @Html.LabelFor(m => m.country)
+                @Html.TextBoxFor(m => m.country)
+            </li>
+
+            <li>
+                @Html.LabelFor(m => m.state)
+                @Html.TextBoxFor(m => m.state)
+            </li>
+        </ol>
+    </fieldset>
+
+    <button id="button" value="Add">Add Airport</button>
+
+}
+
+@using (Html.BeginForm("Index", "Flight"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <input type="submit" value="Back" />
+}
