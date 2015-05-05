@@ -38,7 +38,7 @@ namespace AirplaneTrafficManagement.Controllers
                 clientModel.username = item.username;
                 clientModel.password = item.password;
                 clientModel.email = item.email;
-                clientModel.phone = item.phone;
+                clientModel.phone = item.phone ?? 0;
                 clientModel.city = item.city;
 
                 model._clientList.Add(clientModel);
@@ -64,7 +64,7 @@ namespace AirplaneTrafficManagement.Controllers
             clientModel.username = getClienttById.username;
             clientModel.password = getClienttById.password;
             clientModel.email = getClienttById.email;
-            clientModel.phone = getClienttById.phone;
+            clientModel.phone = getClienttById.phone ?? 0;
             clientModel.city = getClienttById.city;
 
             return View("EditClient", clientModel);  

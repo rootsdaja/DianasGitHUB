@@ -1,0 +1,64 @@
+﻿@model AirplaneTrafficManagement.Models.BookTicketsViewModel
+@{
+    ViewBag.Title = "Edit Tickets";
+}
+
+<h2>BookFlight</h2>
+
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th><b>Round Trip</b></th>
+        <th><b>Depart From</b></th>
+        <th><b>Arrival At</b></th>
+        <th><b>Depart On</b></th>
+        <th><b>Return On</b></th>
+        <th><b>Adult</b></th>
+        <th><b>Children</b></th>
+        <th><b>Infant</b></th>
+        <th><b>Seat</b></th>
+        <th><b>Class</b></th>
+        <th><b>Airline</b></th>
+        @*<th><b>Options</b></th>*@
+    </tr>
+
+    @foreach (AirplaneTrafficManagement.Models.BookTicketsViewModel item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(model => item.RoundTrip)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.DepartureFromId)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.ArrivalAtId)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.DepartOn)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.ReturnOn)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Adult)
+            </th>
+            <th>
+            @Html.DisplayFor(modelItem => item.Children)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Infant)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Seat)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Class)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.AirlineId)
+            </th>
+     </tr>
+    }       
+       </table>
+             

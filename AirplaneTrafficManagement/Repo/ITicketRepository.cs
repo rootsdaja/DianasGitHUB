@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AirplaneTrafficManagement.Repo
 {
-    interface ITicketRepository
+    public interface ITicketRepository
     {
         IEnumerable<Ticket> GetTickets();
         Ticket GetTicketById(int id);
@@ -18,5 +18,6 @@ namespace AirplaneTrafficManagement.Repo
         void DeleteTicket(int ticketId);
         void UpdateTicket(Ticket ticket);
         void Save();
+        void EditTicketRepo(Ticket ticket);
     }
 }

@@ -1,32 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AirplaneTrafficModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AirplaneTrafficEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Airline" EntityType="AirplaneTrafficModel.Airline" />
+    <EntitySet Name="Airport" EntityType="AirplaneTrafficModel.Airport" />
+    <EntitySet Name="Client" EntityType="AirplaneTrafficModel.Client" />
+    <EntitySet Name="Flight" EntityType="AirplaneTrafficModel.Flight" />
+    <EntitySet Name="Passenger" EntityType="AirplaneTrafficModel.Passenger" />
+    <EntitySet Name="Route" EntityType="AirplaneTrafficModel.Route" />
+    <EntitySet Name="Ticket" EntityType="AirplaneTrafficModel.Ticket" />
+    <AssociationSet Name="FK_Ticket_Airline" Association="AirplaneTrafficModel.FK_Ticket_Airline">
+      <End Role="Airline" EntitySet="Airline" />
+      <End Role="Ticket" EntitySet="Ticket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Flight_Airport" Association="AirplaneTrafficModel.FK_Flight_Airport">
+      <End Role="Airport" EntitySet="Airport" />
+      <End Role="Flight" EntitySet="Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Flight_Airport1" Association="AirplaneTrafficModel.FK_Flight_Airport1">
+      <End Role="Airport" EntitySet="Airport" />
+      <End Role="Flight" EntitySet="Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Route_Airport" Association="AirplaneTrafficModel.FK_Route_Airport">
+      <End Role="Airport" EntitySet="Airport" />
+      <End Role="Route" EntitySet="Route" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Passenger" Association="AirplaneTrafficModel.FK_Client_Passenger">
+      <End Role="Passenger" EntitySet="Passenger" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Ticket" Association="AirplaneTrafficModel.FK_Client_Ticket">
+      <End Role="Ticket" EntitySet="Ticket" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ticket_Flight" Association="AirplaneTrafficModel.FK_Ticket_Flight">
+      <End Role="Flight" EntitySet="Flight" />
+      <End Role="Ticket" EntitySet="Ticket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ticket_Passenger" Association="AirplaneTrafficModel.FK_Ticket_Passenger">
+      <End Role="Passenger" EntitySet="Passenger" />
+      <End Role="Ticket" EntitySet="Ticket" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="AirplaneTrafficModel.sysdiagrams" />
+  </EntityContainer>
   <EntityType Name="Airline">
     <Key>
       <PropertyRef Name="idAirline" />
     </Key>
-    <Property Name="idAirline" Type="Int32" Nullable="false" />
+    <Property Name="idAirline" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="companyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="logo" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_Airline" FromRole="Airline" ToRole="Ticket" />
-    <NavigationProperty Name="Flights" Relationship="AirplaneTrafficModel.FK_Flight_Airline" FromRole="Airline" ToRole="Flight" />
+    <NavigationProperty Name="Ticket" Relationship="AirplaneTrafficModel.FK_Ticket_Airline" FromRole="Airline" ToRole="Ticket" />
   </EntityType>
   <EntityType Name="Airport">
     <Key>
       <PropertyRef Name="idAirport" />
     </Key>
-    <Property Name="idAirport" Type="Int32" Nullable="false" />
+    <Property Name="idAirport" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="airportName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Flights" Relationship="Self.FK_Flight_Airport" FromRole="Airport" ToRole="Flight" />
-    <NavigationProperty Name="Routes" Relationship="Self.FK_Route_Airport" FromRole="Airport" ToRole="Route" />
     <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Flight" Relationship="AirplaneTrafficModel.FK_Flight_Airport" FromRole="Airport" ToRole="Flight" />
+    <NavigationProperty Name="Flight1" Relationship="AirplaneTrafficModel.FK_Flight_Airport1" FromRole="Airport" ToRole="Flight" />
+    <NavigationProperty Name="Route" Relationship="AirplaneTrafficModel.FK_Route_Airport" FromRole="Airport" ToRole="Route" />
   </EntityType>
   <EntityType Name="Client">
     <Key>
       <PropertyRef Name="idClient" />
     </Key>
-    <Property Name="idClient" Type="Int32" Nullable="false" />
+    <Property Name="idClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -34,91 +76,76 @@
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="phone" Type="Int32" />
     <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="idUserType" Type="Int32" />
     <Property Name="idPassenger" Type="Int32" />
     <Property Name="idTicket" Type="Int32" />
-    <NavigationProperty Name="Passenger" Relationship="Self.FK_Client_Passenger" FromRole="Client" ToRole="Passenger" />
-    <NavigationProperty Name="Ticket" Relationship="Self.FK_Client_Ticket" FromRole="Client" ToRole="Ticket" />
-    <NavigationProperty Name="UserType" Relationship="Self.FK_Client_UserType" FromRole="Client" ToRole="UserType" />
+    <NavigationProperty Name="Passenger" Relationship="AirplaneTrafficModel.FK_Client_Passenger" FromRole="Client" ToRole="Passenger" />
+    <NavigationProperty Name="Ticket" Relationship="AirplaneTrafficModel.FK_Client_Ticket" FromRole="Client" ToRole="Ticket" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="confirmPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Flight">
     <Key>
       <PropertyRef Name="idFlight" />
     </Key>
-    <Property Name="idFlight" Type="Int32" Nullable="false" />
-    <Property Name="departureFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="arriveAt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idFlight" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="departOn" Type="DateTime" Precision="0" />
     <Property Name="returnOn" Type="DateTime" Precision="0" />
-    <Property Name="time" Type="Time" Precision="7" />
     <Property Name="idAirport" Type="Int32" />
     <Property Name="idRoute" Type="Int32" />
-    <NavigationProperty Name="Airport" Relationship="Self.FK_Flight_Airport" FromRole="Flight" ToRole="Airport" />
-    <NavigationProperty Name="Route" Relationship="Self.FK_Flight_Route" FromRole="Flight" ToRole="Route" />
-    <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_Flight" FromRole="Flight" ToRole="Ticket" />
     <Property Name="idAirline" Type="Int32" />
-    <NavigationProperty Name="Airline" Relationship="AirplaneTrafficModel.FK_Flight_Airline" FromRole="Flight" ToRole="Airline" />
+    <Property Name="departureFrom" Type="Int32" />
+    <Property Name="arriveAt" Type="Int32" />
+    <NavigationProperty Name="Departure" Relationship="AirplaneTrafficModel.FK_Flight_Airport" FromRole="Flight" ToRole="Airport" />
+    <NavigationProperty Name="Arrival" Relationship="AirplaneTrafficModel.FK_Flight_Airport1" FromRole="Flight" ToRole="Airport" />
+    <NavigationProperty Name="Ticket" Relationship="AirplaneTrafficModel.FK_Ticket_Flight" FromRole="Flight" ToRole="Ticket" />
+    <Property Name="price" Type="Double" />
   </EntityType>
   <EntityType Name="Passenger">
     <Key>
       <PropertyRef Name="idPassenger" />
     </Key>
-    <Property Name="idPassenger" Type="Int32" Nullable="false" />
+    <Property Name="idPassenger" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="adult" Type="Int32" />
     <Property Name="children" Type="Int32" />
     <Property Name="infants" Type="Int32" />
-    <NavigationProperty Name="Clients" Relationship="Self.FK_Client_Passenger" FromRole="Passenger" ToRole="Client" />
+    <NavigationProperty Name="Client" Relationship="AirplaneTrafficModel.FK_Client_Passenger" FromRole="Passenger" ToRole="Client" />
+    <NavigationProperty Name="Ticket" Relationship="AirplaneTrafficModel.FK_Ticket_Passenger" FromRole="Passenger" ToRole="Ticket" />
   </EntityType>
   <EntityType Name="Route">
     <Key>
       <PropertyRef Name="idRoute" />
     </Key>
-    <Property Name="idRoute" Type="Int32" Nullable="false" />
+    <Property Name="idRoute" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="leavingFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="goingTo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="leavingHour" Type="Time" Precision="7" />
-    <Property Name="idAirport" Type="Int32" />
-    <NavigationProperty Name="Airport" Relationship="Self.FK_Route_Airport" FromRole="Route" ToRole="Airport" />
-    <NavigationProperty Name="Flights" Relationship="Self.FK_Flight_Route" FromRole="Route" ToRole="Flight" />
     <Property Name="arrivalHour" Type="Time" Precision="7" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idAirport" Type="Int32" />
+    <NavigationProperty Name="Airport" Relationship="AirplaneTrafficModel.FK_Route_Airport" FromRole="Route" ToRole="Airport" />
   </EntityType>
   <EntityType Name="Ticket">
     <Key>
       <PropertyRef Name="idTicket" />
     </Key>
-    <Property Name="idTicket" Type="Int32" Nullable="false" />
-    <Property Name="idAirline" Type="Int32" />
+    <Property Name="idTicket" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="seat" Type="Int32" />
     <Property Name="availableTickets" Type="Int32" />
     <Property Name="totalTickets" Type="Int32" />
-    <Property Name="idFlight" Type="Int32" />
-    <NavigationProperty Name="Airline" Relationship="Self.FK_Ticket_Airline" FromRole="Ticket" ToRole="Airline" />
-    <NavigationProperty Name="Clients" Relationship="Self.FK_Client_Ticket" FromRole="Ticket" ToRole="Client" />
-    <NavigationProperty Name="Flight" Relationship="Self.FK_Ticket_Flight" FromRole="Ticket" ToRole="Flight" />
     <Property Name="class" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="roundTrip" Type="Boolean" />
-  </EntityType>
-  <EntityType Name="UserType">
-    <Key>
-      <PropertyRef Name="idUserType" />
-    </Key>
-    <Property Name="idUserType" Type="Int32" Nullable="false" />
-    <Property Name="admin" Type="Boolean" />
-    <NavigationProperty Name="Clients" Relationship="Self.FK_Client_UserType" FromRole="UserType" ToRole="Client" />
+    <Property Name="idAirline" Type="Int32" />
+    <Property Name="idFlight" Type="Int32" />
+    <Property Name="idPassenger" Type="Int32" />
+    <NavigationProperty Name="Airline" Relationship="AirplaneTrafficModel.FK_Ticket_Airline" FromRole="Ticket" ToRole="Airline" />
+    <NavigationProperty Name="Client" Relationship="AirplaneTrafficModel.FK_Client_Ticket" FromRole="Ticket" ToRole="Client" />
+    <NavigationProperty Name="Flight" Relationship="AirplaneTrafficModel.FK_Ticket_Flight" FromRole="Ticket" ToRole="Flight" />
+    <NavigationProperty Name="Passenger" Relationship="AirplaneTrafficModel.FK_Ticket_Passenger" FromRole="Ticket" ToRole="Passenger" />
+    <Property Name="price" Type="Double" />
   </EntityType>
   <Association Name="FK_Ticket_Airline">
-    <End Role="Airline" Type="Self.Airline" Multiplicity="0..1" />
-    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <End Type="AirplaneTrafficModel.Airline" Role="Airline" Multiplicity="0..1" />
+    <End Type="AirplaneTrafficModel.Ticket" Role="Ticket" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Airline">
         <PropertyRef Name="idAirline" />
@@ -129,20 +156,32 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Flight_Airport">
-    <End Role="Airport" Type="Self.Airport" Multiplicity="0..1" />
-    <End Role="Flight" Type="Self.Flight" Multiplicity="*" />
+    <End Type="AirplaneTrafficModel.Airport" Role="Airport" Multiplicity="0..1" />
+    <End Type="AirplaneTrafficModel.Flight" Role="Flight" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Airport">
         <PropertyRef Name="idAirport" />
       </Principal>
       <Dependent Role="Flight">
+        <PropertyRef Name="departureFrom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Flight_Airport1">
+    <End Type="AirplaneTrafficModel.Airport" Role="Airport" Multiplicity="0..1" />
+    <End Type="AirplaneTrafficModel.Flight" Role="Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Airport">
         <PropertyRef Name="idAirport" />
+      </Principal>
+      <Dependent Role="Flight">
+        <PropertyRef Name="arriveAt" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Route_Airport">
-    <End Role="Airport" Type="Self.Airport" Multiplicity="0..1" />
-    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+    <End Type="AirplaneTrafficModel.Airport" Role="Airport" Multiplicity="0..1" />
+    <End Type="AirplaneTrafficModel.Route" Role="Route" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Airport">
         <PropertyRef Name="idAirport" />
@@ -153,8 +192,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Client_Passenger">
-    <End Role="Passenger" Type="Self.Passenger" Multiplicity="0..1" />
-    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <End Type="AirplaneTrafficModel.Passenger" Role="Passenger" Multiplicity="0..1" />
+    <End Type="AirplaneTrafficModel.Client" Role="Client" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Passenger">
         <PropertyRef Name="idPassenger" />
@@ -165,8 +204,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Client_Ticket">
-    <End Role="Ticket" Type="Self.Ticket" Multiplicity="0..1" />
-    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <End Type="AirplaneTrafficModel.Ticket" Role="Ticket" Multiplicity="0..1" />
+    <End Type="AirplaneTrafficModel.Client" Role="Client" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Ticket">
         <PropertyRef Name="idTicket" />
@@ -176,33 +215,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Client_UserType">
-    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
-    <End Role="Client" Type="Self.Client" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UserType">
-        <PropertyRef Name="idUserType" />
-      </Principal>
-      <Dependent Role="Client">
-        <PropertyRef Name="idUserType" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Flight_Route">
-    <End Role="Route" Type="Self.Route" Multiplicity="0..1" />
-    <End Role="Flight" Type="Self.Flight" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Route">
-        <PropertyRef Name="idRoute" />
-      </Principal>
-      <Dependent Role="Flight">
-        <PropertyRef Name="idRoute" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Ticket_Flight">
-    <End Role="Flight" Type="Self.Flight" Multiplicity="0..1" />
-    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <End Type="AirplaneTrafficModel.Flight" Role="Flight" Multiplicity="0..1" />
+    <End Type="AirplaneTrafficModel.Ticket" Role="Ticket" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Flight">
         <PropertyRef Name="idFlight" />
@@ -212,63 +227,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="AirplaneTrafficEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Airlines" EntityType="Self.Airline" />
-    <EntitySet Name="Airports" EntityType="Self.Airport" />
-    <EntitySet Name="Clients" EntityType="Self.Client" />
-    <EntitySet Name="Flights" EntityType="Self.Flight" />
-    <EntitySet Name="Passengers" EntityType="Self.Passenger" />
-    <EntitySet Name="Routes" EntityType="Self.Route" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="Tickets" EntityType="Self.Ticket" />
-    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
-    <AssociationSet Name="FK_Ticket_Airline" Association="Self.FK_Ticket_Airline">
-      <End Role="Airline" EntitySet="Airlines" />
-      <End Role="Ticket" EntitySet="Tickets" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Flight_Airport" Association="Self.FK_Flight_Airport">
-      <End Role="Airport" EntitySet="Airports" />
-      <End Role="Flight" EntitySet="Flights" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Route_Airport" Association="Self.FK_Route_Airport">
-      <End Role="Airport" EntitySet="Airports" />
-      <End Role="Route" EntitySet="Routes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Client_Passenger" Association="Self.FK_Client_Passenger">
-      <End Role="Passenger" EntitySet="Passengers" />
-      <End Role="Client" EntitySet="Clients" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Client_Ticket" Association="Self.FK_Client_Ticket">
-      <End Role="Ticket" EntitySet="Tickets" />
-      <End Role="Client" EntitySet="Clients" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Client_UserType" Association="Self.FK_Client_UserType">
-      <End Role="UserType" EntitySet="UserTypes" />
-      <End Role="Client" EntitySet="Clients" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Flight_Route" Association="Self.FK_Flight_Route">
-      <End Role="Route" EntitySet="Routes" />
-      <End Role="Flight" EntitySet="Flights" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Ticket_Flight" Association="Self.FK_Ticket_Flight">
-      <End Role="Flight" EntitySet="Flights" />
-      <End Role="Ticket" EntitySet="Tickets" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Flight_Airline" Association="AirplaneTrafficModel.FK_Flight_Airline">
-      <End Role="Airline" EntitySet="Airlines" />
-      <End Role="Flight" EntitySet="Flights" />
-    </AssociationSet>
-  </EntityContainer>
-  <Association Name="FK_Flight_Airline">
-    <End Type="AirplaneTrafficModel.Airline" Role="Airline" Multiplicity="0..1" />
-    <End Type="AirplaneTrafficModel.Flight" Role="Flight" Multiplicity="*" />
+  <Association Name="FK_Ticket_Passenger">
+    <End Type="AirplaneTrafficModel.Passenger" Role="Passenger" Multiplicity="0..1" />
+    <End Type="AirplaneTrafficModel.Ticket" Role="Ticket" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Airline">
-        <PropertyRef Name="idAirline" />
+      <Principal Role="Passenger">
+        <PropertyRef Name="idPassenger" />
       </Principal>
-      <Dependent Role="Flight">
-        <PropertyRef Name="idAirline" />
+      <Dependent Role="Ticket">
+        <PropertyRef Name="idPassenger" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
 </Schema>

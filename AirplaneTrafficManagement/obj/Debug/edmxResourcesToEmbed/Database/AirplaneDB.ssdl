@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="AirplaneTrafficModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Airline">
     <Key>
       <PropertyRef Name="idAirline" />
@@ -30,23 +30,25 @@
     <Property Name="email" Type="varchar" MaxLength="50" />
     <Property Name="phone" Type="int" />
     <Property Name="city" Type="varchar" MaxLength="50" />
-    <Property Name="idUserType" Type="int" />
     <Property Name="idPassenger" Type="int" />
     <Property Name="idTicket" Type="int" />
+    <Property Name="address" Type="varchar" MaxLength="50" />
+    <Property Name="confirmPassword" Type="varchar" MaxLength="50" />
+    <Property Name="userType" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Flight">
     <Key>
       <PropertyRef Name="idFlight" />
     </Key>
     <Property Name="idFlight" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="departureFrom" Type="varchar" MaxLength="50" />
-    <Property Name="arriveAt" Type="varchar" MaxLength="50" />
     <Property Name="departOn" Type="date" />
     <Property Name="returnOn" Type="date" />
-    <Property Name="time" Type="time" Precision="7" />
     <Property Name="idAirport" Type="int" />
     <Property Name="idRoute" Type="int" />
     <Property Name="idAirline" Type="int" />
+    <Property Name="departureFrom" Type="int" />
+    <Property Name="arriveAt" Type="int" />
+    <Property Name="price" Type="float" />
   </EntityType>
   <EntityType Name="Passenger">
     <Key>
@@ -90,13 +92,8 @@
     <Property Name="roundTrip" Type="bit" />
     <Property Name="idAirline" Type="int" />
     <Property Name="idFlight" Type="int" />
-  </EntityType>
-  <EntityType Name="UserType">
-    <Key>
-      <PropertyRef Name="idUserType" />
-    </Key>
-    <Property Name="idUserType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="admin" Type="bit" />
+    <Property Name="idPassenger" Type="int" />
+    <Property Name="price" Type="float" />
   </EntityType>
   <Association Name="FK_Client_Passenger">
     <End Role="Passenger" Type="Self.Passenger" Multiplicity="0..1" />
@@ -122,31 +119,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Client_UserType">
-    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
-    <End Role="Client" Type="Self.Client" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UserType">
-        <PropertyRef Name="idUserType" />
-      </Principal>
-      <Dependent Role="Client">
-        <PropertyRef Name="idUserType" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Flight_Airline">
-    <End Role="Airline" Type="Self.Airline" Multiplicity="0..1" />
-    <End Role="Flight" Type="Self.Flight" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Airline">
-        <PropertyRef Name="idAirline" />
-      </Principal>
-      <Dependent Role="Flight">
-        <PropertyRef Name="idAirline" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Flight_Airport">
+  <Association Name="FK_Flight_Arrival">
     <End Role="Airport" Type="Self.Airport" Multiplicity="0..1" />
     <End Role="Flight" Type="Self.Flight" Multiplicity="*" />
     <ReferentialConstraint>
@@ -154,19 +127,19 @@
         <PropertyRef Name="idAirport" />
       </Principal>
       <Dependent Role="Flight">
-        <PropertyRef Name="idAirport" />
+        <PropertyRef Name="arriveAt" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Flight_Route">
-    <End Role="Route" Type="Self.Route" Multiplicity="0..1" />
+  <Association Name="FK_Flight_Departure">
+    <End Role="Airport" Type="Self.Airport" Multiplicity="0..1" />
     <End Role="Flight" Type="Self.Flight" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Route">
-        <PropertyRef Name="idRoute" />
+      <Principal Role="Airport">
+        <PropertyRef Name="idAirport" />
       </Principal>
       <Dependent Role="Flight">
-        <PropertyRef Name="idRoute" />
+        <PropertyRef Name="departureFrom" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -206,7 +179,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="AirplaneTrafficModelStoreContainer">
+  <Association Name="FK_Ticket_Passenger">
+    <End Role="Passenger" Type="Self.Passenger" Multiplicity="0..1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Passenger">
+        <PropertyRef Name="idPassenger" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="idPassenger" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StoreContainer">
     <EntitySet Name="Airline" EntityType="Self.Airline" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Airport" EntityType="Self.Airport" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
@@ -215,7 +200,6 @@
     <EntitySet Name="Route" EntityType="Self.Route" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Client_Passenger" Association="Self.FK_Client_Passenger">
       <End Role="Passenger" EntitySet="Passenger" />
       <End Role="Client" EntitySet="Client" />
@@ -224,20 +208,12 @@
       <End Role="Ticket" EntitySet="Ticket" />
       <End Role="Client" EntitySet="Client" />
     </AssociationSet>
-    <AssociationSet Name="FK_Client_UserType" Association="Self.FK_Client_UserType">
-      <End Role="UserType" EntitySet="UserType" />
-      <End Role="Client" EntitySet="Client" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Flight_Airline" Association="Self.FK_Flight_Airline">
-      <End Role="Airline" EntitySet="Airline" />
-      <End Role="Flight" EntitySet="Flight" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Flight_Airport" Association="Self.FK_Flight_Airport">
+    <AssociationSet Name="FK_Flight_Arrival" Association="Self.FK_Flight_Arrival">
       <End Role="Airport" EntitySet="Airport" />
       <End Role="Flight" EntitySet="Flight" />
     </AssociationSet>
-    <AssociationSet Name="FK_Flight_Route" Association="Self.FK_Flight_Route">
-      <End Role="Route" EntitySet="Route" />
+    <AssociationSet Name="FK_Flight_Departure" Association="Self.FK_Flight_Departure">
+      <End Role="Airport" EntitySet="Airport" />
       <End Role="Flight" EntitySet="Flight" />
     </AssociationSet>
     <AssociationSet Name="FK_Route_Airport" Association="Self.FK_Route_Airport">
@@ -250,6 +226,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Ticket_Flight" Association="Self.FK_Ticket_Flight">
       <End Role="Flight" EntitySet="Flight" />
+      <End Role="Ticket" EntitySet="Ticket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ticket_Passenger" Association="Self.FK_Ticket_Passenger">
+      <End Role="Passenger" EntitySet="Passenger" />
       <End Role="Ticket" EntitySet="Ticket" />
     </AssociationSet>
   </EntityContainer>

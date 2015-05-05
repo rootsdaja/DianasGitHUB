@@ -11,11 +11,6 @@ namespace AirplaneTrafficManagement.Repo
     {
         private AirplaneTrafficEntities _context;
 
-        //public FlightRepository(AirplaneTrafficEntities context)
-        //{
-        //    this.context = context;
-        //}
-
         public AirportRepository()
         {
             _context = new AirplaneTrafficEntities();
@@ -23,33 +18,32 @@ namespace AirplaneTrafficManagement.Repo
 
         public IEnumerable<Airport> GetAirports()
         {
-            return _context.Airports.ToList();
+            return _context.Airport.ToList();
         }
 
         public Airport GetAirportById(int id)
         {
-            return _context.Airports.Find(id);
+            return _context.Airport.Find(id);
         }
-
 
         public List<Airport> GetAirportsByName(string name)
         {
-            return _context.Airports.Where(a => a.airportName.Equals(name)).ToList();
+            return _context.Airport.Where(a => a.airportName.Equals(name)).ToList();
         }
 
         public List<Airport> GetAirportsByCity(string city)
         {
-            return _context.Airports.Where(a => a.city.Equals(city)).ToList();
+            return _context.Airport.Where(a => a.city.Equals(city)).ToList();
         }
 
         public List<Airport> GetAiportsByCountry(string country)
         {
-            return _context.Airports.Where(a => a.country == country).ToList();
+            return _context.Airport.Where(a => a.country == country).ToList();
         }
 
         public List<Airport> GetAirportByState(string state)
         {
-            return _context.Airports.Where(a => a.state.Equals(state)).ToList();
+            return _context.Airport.Where(a => a.state.Equals(state)).ToList();
         }
 
      
@@ -78,12 +72,12 @@ namespace AirplaneTrafficManagement.Repo
 
         public List<Airport> SearchAirportByName(string _searchValue)
         {
-            return _context.Airports.Where(a => a.airportName.StartsWith(_searchValue)).ToList();
+            return _context.Airport.Where(a => a.airportName.StartsWith(_searchValue)).ToList();
         }
 
         public List<Airport> SearchAirportByNameCountryCityState(string _searchValue)
         {
-            return _context.Airports.Where(a => a.airportName.StartsWith(_searchValue) &&
+            return _context.Airport.Where(a => a.airportName.StartsWith(_searchValue) &&
                 a.city.StartsWith(_searchValue) && a.country.StartsWith(_searchValue)
                 && a.state.StartsWith(_searchValue)).ToList();
         }
@@ -92,14 +86,17 @@ namespace AirplaneTrafficManagement.Repo
 
         public void InsertAirport(Airport airport)
         {
-            _context.Airports.Add(airport);
+            _context.Airport.Add(airport);
             _context.SaveChanges();
         }
 
         public void DeleteAirport(int airportId)
         {
-            var airport = _context.Airports.Find(airportId);
-            _context.Airports.Remove(airport);
+            var airport = _context.Airport.Find(airportId);
+            var flight = _context.Flight.Find(airportId);
+
+            _context.Airport.Remove(airport);
+            _context.Flight.Remove(flight);
             _context.SaveChanges();
         }
 
@@ -115,7 +112,7 @@ namespace AirplaneTrafficManagement.Repo
 
         public void EditAirportRepo(Airport airport)
         {
-            var airportId = _context.Airports.FirstOrDefault(f => f.idAirport == airport.idAirport);
+            var airportId = _context.Airport.FirstOrDefault(f => f.idAirport == airport.idAirport);
 
             airportId.idAirport = airport.idAirport;
             airportId.airportName = airport.airportName;

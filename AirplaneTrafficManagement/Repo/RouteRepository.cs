@@ -23,28 +23,28 @@ namespace AirplaneTrafficManagement.Repo
 
         public IEnumerable<Route> GetRoutes()
         {
-            return _context.Routes.ToList();
+            return _context.Route.ToList();
         }
 
         public Route GetRouteById(int id)
         {
-            return _context.Routes.Find(id);
+            return _context.Route.Find(id);
         }
 
 
         public List<Route> GetRoutesByLeavingLocation(string leaving)
         {
-            return _context.Routes.Where(l => l.leavingFrom.Equals(leaving)).ToList();
+            return _context.Route.Where(l => l.leavingFrom.Equals(leaving)).ToList();
         }
 
         public List<Route> GetRoutesByGoingToLocation(string going)
         {
-            return _context.Routes.Where(l => l.goingTo.Equals(going)).ToList();
+            return _context.Route.Where(l => l.goingTo.Equals(going)).ToList();
         }
 
-        public List<Route> GetRouteByLeavingFromAndGoingToLocation(string leaving, string going)
+        public List<Route> GetRoutesByLeavingFromAndGoingToLocation(string leaving, string going)
         {
-            return _context.Routes.Where(r => r.leavingFrom.Equals(leaving) && r.goingTo.Equals(going)).ToList();
+            return _context.Route.Where(r => r.leavingFrom.Equals(leaving) && r.goingTo.Equals(going)).ToList();
         }
 
         public List<string> GetAirlineByLeavingAndGoingLocations(string leavingFrom, string goingTo, string name)
@@ -52,7 +52,7 @@ namespace AirplaneTrafficManagement.Repo
             //var routeByLeavingToAndDest = GetRouteByLeavingFromAndGoingToLocation(leavingFrom, goingTo); 
 
              //ti se returneaza o lista de linii aeriene
-            var airlineCompanies = _context.Airlines.Where(r => r.companyName.Equals(name)).ToList();
+            var airlineCompanies = _context.Airline.Where(r => r.companyName.Equals(name)).ToList();
             var leaving =new List<string>();
 
             if (airlineCompanies != null && airlineCompanies.Count > 0)
@@ -71,17 +71,17 @@ namespace AirplaneTrafficManagement.Repo
 
         public List<Route> GetRoutesByleavingHour(string hour)
         {
-            return _context.Routes.Where(a => a.leavingHour.Equals(hour)).ToList();
+            return _context.Route.Where(a => a.leavingHour.Equals(hour)).ToList();
         }
 
         public List<Route> GetRoutesByarrivalHour(string hour)
         {
-            return _context.Routes.Where(a => a.arrivalHour.Equals(hour)).ToList();
+            return _context.Route.Where(a => a.arrivalHour.Equals(hour)).ToList();
         }
 
         public List<Route> GetRoutesByleavingAndArrivalHour(string hour)
         {
-            return _context.Routes.Where(a => a.leavingHour.Equals(hour) && a.arrivalHour.Equals(hour)).ToList();
+            return _context.Route.Where(a => a.leavingHour.Equals(hour) && a.arrivalHour.Equals(hour)).ToList();
         }
 
       
@@ -102,14 +102,14 @@ namespace AirplaneTrafficManagement.Repo
 
         public void InsertRoute(Route route)
         {
-            _context.Routes.Add(route);
+            _context.Route.Add(route);
             _context.SaveChanges();
         }
 
         public void DeleteRoute(int routeId)
         {
-            var route = _context.Routes.Find(routeId);
-            _context.Routes.Remove(route);
+            var route = _context.Route.Find(routeId);
+            _context.Route.Remove(route);
             _context.SaveChanges();
         }
 
@@ -125,7 +125,7 @@ namespace AirplaneTrafficManagement.Repo
 
         public void EditRouteRepo(Route route)
         {
-            var routeId = _context.Routes.FirstOrDefault(f => f.idRoute == route.idRoute);
+            var routeId = _context.Route.FirstOrDefault(f => f.idRoute == route.idRoute);
 
             routeId.idRoute = route.idRoute;
             routeId.leavingFrom = route.leavingFrom;
@@ -136,5 +136,12 @@ namespace AirplaneTrafficManagement.Repo
             _context.SaveChanges();
         }
 
+
+
+
+        public List<Route> GetRouteByLeavingFromAndGoingToLocation(string leaving, string going)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

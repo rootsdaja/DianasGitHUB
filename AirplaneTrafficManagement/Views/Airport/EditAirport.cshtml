@@ -10,56 +10,50 @@
     @Html.ValidationSummary()
     @Html.HiddenFor(model => model.idAirport)
 
-    <fieldset>
         <legend>Edit Parameters</legend>
-        <ol>
-            @*<li>
-                    @Html.LabelFor(p=>p.idFlight)
-                    @Html.DisplayFor(p => p.idFlight)
-                </li>*@
-            @*<li>
-                    @Html.LabelFor(p=> p.idFlight)
-                </li>*@
-            @*<li>*@
-            @*@Html.DropDownListFor(m => m.departureFrom, new SelectList
-                (Model.FlightList, "Key", "Value"))*@
-            @*@Html.DropDownListFor(model => model.departureFrom,
-                Model.FlightList.Select(depart => new SelectListItem()
-                {
-                Text = depart,
-                Value = depart,
-                Selected = depart = Model.FlightList
-                })*@
+    
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.airportName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.airportName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.airportName, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-            @*@Html.TextBoxFor(p => p.companyName)
-                </li>*@
-            <li>
-                @Html.LabelFor(p => p.airportName)
-                @Html.TextBoxFor(p => p.airportName)
-            </li>
-            <li>
-                @Html.LabelFor(model => model.city)
-                @Html.TextBoxFor(model => model.city)
-            </li>
-            <li>
-                @Html.LabelFor(model => model.country)
-                @Html.TextBoxFor(model => model.country)
-            </li>
-            <li>
-                @Html.LabelFor(model => model.state)
-                @Html.TextBoxFor(model => model.state)
-            </li></ol>
+            <div class="form-group">
+                @Html.LabelFor(m => m.city, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.city, new { @class="form-control"} )
+                    @Html.ValidationMessageFor(m => m.city, "", new { @class = "text-danger"})
+                </div>
+            </div>
 
-        <input type="submit" value="Submit" />
-    </fieldset>
-}
+            <div class="form-group">
+                @Html.LabelFor(m => m.country, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.country, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.country, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-@using (Html.BeginForm("Index", "Airport"))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
-    @Html.HiddenFor(model => model.idAirport)
+            <div class="form-group">
+                @Html.LabelFor(m => m.state, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.state, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.state, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-    <input type="submit" value="Back" />
-}
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Edit" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        }
 
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>

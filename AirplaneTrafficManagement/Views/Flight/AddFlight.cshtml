@@ -11,63 +11,47 @@
     @Html.HiddenFor(model => model.idFlight)
     @Html.HiddenFor(model => model.idRoute)
     @Html.HiddenFor(model => model.idAirport)
-
-
-    <fieldset>
-        <legend>Add Flights Form </legend>
-        <ol>
-    <li>
-     @Html.LabelFor(m => m.departureFrom)
-    @Html.TextBoxFor(m => m.departureFrom)
-         </li>
- 
-    <li>
-        @Html.LabelFor(m => m.arriveAt)
-        @Html.TextBoxFor(m => m.arriveAt)
-    </li>
-
-    <li>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.departOn)
-        </div>
-
-        <div class="editor-filed">
-            @Html.EditorFor(model => model.departOn)
-            @Html.ValidationMessageFor(model => model.departOn)
-        </div>
-    </li>
-            <li>
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.returnOn)
-                </div>
-
-                <div class="editor-filed">
-                    @Html.EditorFor(model => model.returnOn)
-                    @Html.ValidationMessageFor(model => model.returnOn)
-                </div>
-            </li>
-            <li>
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.time)
-                </div>
-
-                <div class="editor-filed">
-                    @Html.EditorFor(model => model.time)
-                    @Html.ValidationMessageFor(model => model.time)
-                </div>
-
-            </li>
-    </ol>
-    </fieldset>
     
-    <button id="button" value="Add">Add Flight</button>
+    <h4>Add Flights Form</h4>
+    <form class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(p => p.DepartureFromId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(p => p.DepartureFromAirport.airportName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
 
-}
-   
-@using (Html.BeginForm("Index", "Flight"))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
+        <div class="form-group">
+            @Html.LabelFor(p => p.ArrivalAtId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(p => p.ArrivalAtAirport.airportName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
 
-    <input type="submit" value="Back" />
+        <div class="form-group">
+            @Html.LabelFor(model => model.departOn, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.departOn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.departOn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.returnOn, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.returnOn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.returnOn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+    </form>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
 }

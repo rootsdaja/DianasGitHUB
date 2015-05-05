@@ -1,36 +1,25 @@
 ﻿@model AirplaneTrafficManagement.Models.AirportViewModel
 @{
-    ViewBag.Title = "Airports Search Page";
+    ViewBag.Title = "Airports";
 }
 
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
-    <h2>Display all the Airports.</h2>
+    <h2>Display all the Airports</h2>
 </hgroup>
 
-<style>
-    table, th, td {
-        border: 2px solid black;
-    }
-
-    th, td {
-        padding: 15px;
-    }
-</style>
-
-
-<table style="width: 800px">
+<table class="table table-bordered table-hover">
     <tr>
-        <td><b>Id Airport</b></td>
-        <td><b>Airport Name</b></td>
-        <td><b>City</b></td>
-        <td><b>Country</b></td>
-        <td><b>State</b></td>
-        <td><b>Options</b></td>
+        <th><b>Id Airport</b></th>
+        <th><b>Airport Name</b></th>
+        <th><b>City</b></th>
+        <th><b>Country</b></th>
+        <th><b>State</b></th>
+        <th><b>Options</b></th>
     </tr>
 
 
-    @foreach (var item in Model._airportList)
+    @foreach (var item in Model.AirportList)
     {
         <tr>
             <td>
@@ -56,9 +45,9 @@
                     @if (session.Admin == true)
                     {*@
 
-                <p>@Html.ActionLink("Edit Airport", "EditAirport", "Airport", new { id = item.idAirport }, null) </p>
-                <p>@Html.ActionLink("Delete Airport", "DeleteAirport", "Airport", new { id = item.idAirport }, null)</p>
-                <p>@Html.ActionLink("Add Airport", "CreateAirport", "Airport", null) </p>
+                @Html.ActionLink("Edit", "EditAirport", "Airport", new { id = item.idAirport }, null) |
+                @Html.ActionLink("Delete", "DeleteAirport", "Airport", new { id = item.idAirport }, null) |
+                @Html.ActionLink("Add", "CreateAirport", "Airport", null) 
 
                 @*<p>@Html.ActionLink("Movie Details", "movieDetail", "Flight", new { id_detail = item.idFlight }, null)</p>*@
                 @*}
@@ -77,14 +66,8 @@
 
 </table>
 
-@using (Html.BeginForm("Index", "Flight"))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
 
-    <input type="submit" value="Back To Flights" />
-}
-
+  
 
 
 

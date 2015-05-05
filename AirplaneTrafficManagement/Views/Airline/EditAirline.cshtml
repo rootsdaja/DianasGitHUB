@@ -10,49 +10,35 @@
     @Html.ValidationSummary()
     @Html.HiddenFor(model => model.idAirline)
 
-    <fieldset>
         <legend>Edit Parameters</legend>
-        <ol>
-            @*<li>
-                    @Html.LabelFor(p=>p.idFlight)
-                    @Html.DisplayFor(p => p.idFlight)
-                </li>*@
-            @*<li>
-                    @Html.LabelFor(p=> p.idFlight)
-                </li>*@
-            @*<li>*@
-                @*@Html.DropDownListFor(m => m.departureFrom, new SelectList
-                    (Model.FlightList, "Key", "Value"))*@
-                @*@Html.DropDownListFor(model => model.departureFrom,
-                    Model.FlightList.Select(depart => new SelectListItem()
-                    {
-                    Text = depart,
-                    Value = depart,
-                    Selected = depart = Model.FlightList
-                    })*@
+   <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.companyName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.companyName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.companyName, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-                @*@Html.TextBoxFor(p => p.companyName)
-            </li>*@
-            <li>
-                @Html.LabelFor(p => p.companyName)
-                @Html.TextBoxFor(p => p.companyName)
-            </li>
-            <li>
-                    @Html.LabelFor(model => model.logo)
-                    @Html.TextBoxFor(model => model.logo)
-            </li>
-        </ol>
+            <div class="form-group">
+                @Html.LabelFor(m => m.logo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.logo, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.logo, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-        <input type="submit" value="Submit" />
-    </fieldset>
+     <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Edit" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
 }
 
-@using (Html.BeginForm("Index", "Airline"))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
-    @Html.HiddenFor(model => model.idAirline)
-
-    <input type="submit" value="Back" />
-}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
 

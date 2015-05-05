@@ -18,7 +18,6 @@ namespace AirplaneTrafficManagement.Models
         public byte[] logo { get; set; }
 
         public virtual ICollection<Ticket> Tickets { get; set; }
-        public List<AirlineViewModel> _airlineList { get; set; }
         public List<SelectListItem> AirlineList { get; set; }
     }
 }

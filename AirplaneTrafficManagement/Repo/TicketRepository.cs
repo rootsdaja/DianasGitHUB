@@ -23,33 +23,33 @@ namespace AirplaneTrafficManagement.Repo
 
         public IEnumerable<Ticket> GetTickets()
         {
-            return _context.Tickets.ToList();
+            return _context.Ticket.ToList();
         }
 
         public Ticket GetTicketById(int id)
         {
-            return _context.Tickets.Find(id);
+            return _context.Ticket.Find(id);
         }
 
 
         public List<Ticket> GetTicketBySeat(string seat)
         {
-            return _context.Tickets.Where(t => t.seat.Equals(seat)).ToList();
+            return _context.Ticket.Where(t => t.seat.Equals(seat)).ToList();
         }
 
         public List<Ticket> GetTicketsByClass(string @class)
         {
-            return _context.Tickets.Where(t => t.@class.Equals(@class)).ToList();
+            return _context.Ticket.Where(t => t.@class.Equals(@class)).ToList();
         }
 
         public List<Ticket> GetTicketsByRoundtrip(bool roundTrip)
         {
-            return _context.Tickets.Where(t => t.roundTrip.Equals(roundTrip)).ToList();
+            return _context.Ticket.Where(t => t.roundTrip.Equals(roundTrip)).ToList();
         }
 
         public List<Ticket> GetTicketsByAvailableTickets(int ticket)
         {
-            return _context.Tickets.Where(t => t.availableTickets.Equals(ticket)).ToList();
+            return _context.Ticket.Where(t => t.availableTickets.Equals(ticket)).ToList();
         }
 
 
@@ -57,13 +57,15 @@ namespace AirplaneTrafficManagement.Repo
 
         public void InsertTicket(Ticket ticket)
         {
-            _context.Tickets.Add(ticket);
+            _context.Ticket.Add(ticket);
+            _context.SaveChanges();
         }
 
         public void DeleteTicket(int ticketId)
         {
-            Ticket ticket = _context.Tickets.Find(ticketId);
-            _context.Tickets.Remove(ticket);
+            Ticket ticket = _context.Ticket.Find(ticketId);
+            _context.Ticket.Remove(ticket);
+            _context.SaveChanges();
         }
 
         public void UpdateTicket(Ticket ticket)
@@ -76,5 +78,18 @@ namespace AirplaneTrafficManagement.Repo
             _context.SaveChanges();
         }
 
+        public void EditTicketRepo(Ticket ticket)
+        {
+            var ticketId = _context.Ticket.FirstOrDefault(f => f.idTicket == ticket.idTicket);
+
+            ticketId.idTicket = ticket.idTicket;
+            ticketId.seat = ticket.seat;
+            ticketId.availableTickets = ticket.availableTickets;
+            ticketId.totalTickets = ticket.totalTickets;
+            ticketId.@class = ticket.@class;
+            ticketId.roundTrip = ticket.roundTrip;
+
+            _context.SaveChanges();
+        }
     }
 }

@@ -9,48 +9,57 @@
     @Html.ValidationSummary()
     @Html.HiddenFor(model => model.idRoute)
 
+    <legend>Add Routes Form </legend>
+    
+    <div class="form-horizontal">
+        <h4>Route</h4>
+         <hr/>
+        <div class="form-group">
+            @Html.LabelFor(m => m.leavingFrom, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.leavingFrom, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.leavingFrom, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-    <fieldset>
-        <legend>Add Route Form </legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.leavingFrom)
-                @Html.TextBoxFor(m => m.leavingFrom)
-            </li>
+        <div class="form-group">
+            @Html.LabelFor(m => m.goingTo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+            @Html.TextBoxFor(m => m.goingTo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.goingTo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    
+         <div class="form-group">
+            @Html.LabelFor(m => m.leavingHour, htmlAttributes: new { @class = "control-label col-md-2" })
+             <div class="col-md-10">
+                 @Html.EditorFor(m => m.leavingHour, new { htmlAttributes = new { @class = "form-control" } })
+                 @Html.ValidationMessageFor(m => m.leavingHour, "", new { @class = "text-danger" })
+             </div>
+         </div>
 
-            <li>
-                @Html.LabelFor(m => m.goingTo)
-                @Html.TextBoxFor(m => m.goingTo)
-            </li>
-            <li>
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.leavingHour)
-                </div>
-                <div class="editor-filed">
-                    @Html.EditorFor(model => model.leavingHour)
-                    @Html.ValidationMessageFor(model => model.leavingHour)
-                </div>
-            </li>
-            <li>
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.arrivalHour)
-                </div>
-                <div class="editor-filed">
-                    @Html.EditorFor(model => model.arrivalHour)
-                    @Html.ValidationMessageFor(model => model.arrivalHour)
-                </div>
-            </li>
-        </ol>
-    </fieldset>
-
-    <button id="button" value="Add">Add Route</button>
-
+        <div class="form-group">
+            @Html.LabelFor(m => m.arrivalHour,htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.arrivalHour, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.leavingHour, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add Route" class="btn btn-default"/> 
+            </div>
+        </div>
+    </div>
 }
 
-@using (Html.BeginForm("Index", "Route"))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
 
-    <input type="submit" value="Back" />
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
+
+

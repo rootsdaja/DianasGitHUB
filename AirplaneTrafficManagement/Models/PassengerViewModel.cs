@@ -18,6 +18,6 @@ namespace AirplaneTrafficManagement.Models
         public Nullable<int> infants { get; set; }
 
         public virtual ICollection<Client> Clients { get; set; }
-        
+        public virtual Ticket Ticket { get; set; }
     }
 }

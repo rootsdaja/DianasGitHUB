@@ -18,6 +18,11 @@ namespace AirplaneTrafficManagement.Repo
         void UpdateClients(Client client);
         void Save();
         void EditClientRepo(Client flight);
+        Client logIn(string username, string password);
+        string registerClients(string firstName, string lastName, 
+            string username, string password, string confirmPassword,
+            string email, string address, int phone, string city, string userType);
+       
 
     }
 }

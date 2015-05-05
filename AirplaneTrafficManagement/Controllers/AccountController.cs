@@ -9,6 +9,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AirplaneTrafficManagement.Models;
+using AirplaneTrafficManagement.Repo;
+using AirplaneTrafficManagement.Database;
+using System.Web.Security;
 
 namespace AirplaneTrafficManagement.Controllers
 {
@@ -17,9 +20,12 @@ namespace AirplaneTrafficManagement.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+      
+        IClientRepository _clientRepo;
 
-        public AccountController()
+        public AccountController(IClientRepository repo)
         {
+            _clientRepo = repo;
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -66,28 +72,57 @@ namespace AirplaneTrafficManagement.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public ActionResult Login(LoginModel model, string returnUrl)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            WebSessionContext _session = new WebSessionContext();
+            Client client = new Client();
 
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
+            //adds the username and a message Hello Username!
+            _session.UserFirstName = model.UserName;
+            client.username = model.UserName;
+            client.password = model.Password;
+            
+            if(ModelState.IsValid)
             {
-                case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+            //variable login stores the username and passwords from the model            
+            var login = _clientRepo.logIn(model.UserName, model.Password);
+
+                if (login == null)
+                {
+                    _session.VerifyIfLogged = false;
+                    return RedirectToAction("Login");
+                }
+
+                else
+                {
+                    _session.VerifyIfLogged = true;
+                    _session.UserIdentifier = login.idClient;
+
+
+                    if (login.userType == "admin")
+                    {
+                        _session.Admin = true;
+                        return RedirectToAction("Index", "Client");
+                    }
+                    else
+                    {
+                        _session.Admin = false;
+                        _session.RegularUser = true;
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
+        }
+        else
+    {
+         ModelState.AddModelError("", "The user name or password provided is incorrect.");          
+    }
+
+           if (_session.VerifyIfLogged == true)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else {
+                return RedirectToAction("Register", "Account");
             }
         }
 
@@ -147,28 +182,38 @@ namespace AirplaneTrafficManagement.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public ActionResult Register(ClientViewModel model)
         {
+            Client client = new Client();
+
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                var register = _clientRepo.registerClients(model.firstName, model.lastName,
+                    model.username, model.password, model.confirmPassword, model.email, 
+                    model.address, model.phone, model.city, model.userType );
+
+                client.firstName = model.firstName;
+                client.lastName = model.lastName;
+                client.username = model.username;
+                client.password = model.password;
+                client.confirmPassword = model.confirmPassword;
+                client.email = model.email;
+                client.address = model.address;
+                client.phone = model.phone;
+                client.city = model.city;
+                client.userType = model.userType;
+
+                try
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Login", "Account");
                 }
-                AddErrors(result);
-            }
+                catch (MembershipCreateUserException e)
+                {
+                    //ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+                    return View("Error");
 
-            // If we got this far, something failed, redisplay form
+                }
+            }
             return View(model);
         }
 

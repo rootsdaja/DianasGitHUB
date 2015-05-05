@@ -24,23 +24,8 @@ namespace AirplaneTrafficManagement.Controllers
         // GET: Airline
         public ActionResult Index()
         {
-            var model = new AirlineViewModel();
-            model._airlineList = new List<AirlineViewModel>();
-
-            var airline = new Airline();
-
-            var airlineListRepo = _airlineRepo.GetAirlines();
-            foreach(var item in airlineListRepo)
-            {
-                var airlineModel = new AirlineViewModel();
-
-                airlineModel.idAirline = item.idAirline;
-                airlineModel.companyName = item.companyName;
-                airlineModel.logo = item.logo;
-
-                model._airlineList.Add(airlineModel);
-            }
-            return View(model);
+            var airlineList = _airlineRepo.GetAirlines();
+            return View(airlineList);
         }
 
 

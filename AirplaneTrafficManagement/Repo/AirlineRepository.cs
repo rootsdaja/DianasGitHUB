@@ -23,23 +23,23 @@ namespace AirplaneTrafficManagement.Repo
 
         public IEnumerable<Airline> GetAirlines()
         {
-            return _context.Airlines.ToList();
+            return _context.Airline.ToList();
         }
 
         public Airline GetAirlineById(int id)
         {
-            return _context.Airlines.Find(id);
+            return _context.Airline.Find(id);
         }
 
         public List<Airline> GetAirlineByCompanyName(string name)
         {
-            var airline = _context.Airlines.Where(a => a.companyName == name).ToList();
+            var airline = _context.Airline.Where(a => a.companyName == name).ToList();
             return airline;
         }
 
         public List<Airline> SearchAirlineByCompanyName(string _searchValue)
         {
-            var airline = _context.Airlines.Where(a => a.companyName.StartsWith(_searchValue)).ToList();
+            var airline = _context.Airline.Where(a => a.companyName.StartsWith(_searchValue)).ToList();
             return airline;
         }
   
@@ -47,20 +47,20 @@ namespace AirplaneTrafficManagement.Repo
 
         public void InsertAirline(Airline airline)
         {
-            _context.Airlines.Add(airline);
+            _context.Airline.Add(airline);
             _context.SaveChanges();
         }
 
         public void DeleteAirline(int airlineId)
         {
-            var airline = _context.Airlines.Find(airlineId);
-            _context.Airlines.Remove(airline);
+            var airline = _context.Airline.Find(airlineId);
+            _context.Airline.Remove(airline);
             _context.SaveChanges();
         }
 
         public void EditAirlinetRepo(Airline airline)
         {
-            var airlineId = _context.Airlines.FirstOrDefault(f => f.idAirline == airline.idAirline);
+            var airlineId = _context.Airline.FirstOrDefault(f => f.idAirline == airline.idAirline);
 
             airlineId.idAirline = airline.idAirline;
             airlineId.companyName = airline.companyName;

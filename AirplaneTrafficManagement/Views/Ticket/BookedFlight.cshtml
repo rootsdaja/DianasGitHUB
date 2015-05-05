@@ -1,0 +1,51 @@
+﻿@model IEnumerable<airplanetrafficmanagement.database.flight>
+    @{
+        ViewBag.Title = "BookedFlight";
+    }
+    <h2>List of Flights according to your location and dates match</h2>
+    @using (Html.BeginForm("FindFlights", "Ticket"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <table class="table table-bordered table-hover">
+            <tr>
+                <td><b>Depart From</b></td>
+                <td><b>Arrive At</b></td>
+                <td><b>Depart On</b></td>
+                <td><b>Return On</b></td>
+                @*<th><b>Leaving Hour</b></th>
+                    <th><b>Arrival Hour</b></th>*@
+                <th><b>Price</b></th>
+            </tr>
+            @foreach (AirplaneTrafficManagement.Database.Flight item in Model)
+            {
+                <tr>
+                    <th>
+                        @Html.DisplayFor(model => item.Departure.airportName)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => item.Arrival.airportName)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => item.departOn)
+                    </td>
+                    <th>
+                        @Html.DisplayFor(model => item.returnOn)
+                    </th>
+                    @*<th>
+                            @Html.DisplayFor(model =>item.leavingHour)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(model => item.ArrivalHour)
+                        </th>*@
+                    <th>
+                        @Html.DisplayFor(model => item.price)
+                    </th>
+                </tr>
+            }
+
+        </table>
+    }
+
+    <button type="submit" class="btn btn-default">Buy</button>

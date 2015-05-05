@@ -1,0 +1,52 @@
+﻿@model AirplaneTrafficManagement.Models.TicketViewModel
+@{
+    ViewBag.Title = "Add Ticket";
+}
+
+@using (Html.BeginForm("AddTicket", "Ticket"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idTicket)
+
+
+    <fieldset>
+        <legend>Add Tickets Form </legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.seat)
+                @Html.TextBoxFor(m => m.seat)
+            </li>
+
+            <li>
+                @Html.LabelFor(m => m.availableTickets)
+                @Html.TextBoxFor(m => m.availableTickets)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.totalTickets)
+                @Html.TextBoxFor(m => m.totalTickets)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.@class)
+                @Html.TextBoxFor(m => m.@class) 
+            </li>
+            <li>
+                @Html.LabelFor(m => m.roundTrip)
+                @Html.TextBoxFor(m => m.roundTrip)
+            </li>
+        </ol>
+    </fieldset>
+
+    <input type="submit" value="Add" />
+
+}
+
+@using(Html.BeginForm("Index", "Ticket"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <input type="submit" class="btn btn-default" value="Back" />
+}
+
+

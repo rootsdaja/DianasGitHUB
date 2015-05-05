@@ -22,23 +22,10 @@ namespace AirplaneTrafficManagement.Controllers
         public ActionResult Index()
         {
             var model = new AirportViewModel();
-            model._airportList = new List<AirportViewModel>();
 
-            var airport = new Airport();
-
-            var airportListRepo = _airportRepo.GetAirports();
-            foreach(var item in airportListRepo)
-            {
-                var airportModel = new AirportViewModel();
-
-                airportModel.idAirport = item.idAirport;
-                airportModel.airportName = item.airportName;
-                airportModel.city = item.city;
-                airportModel.country = item.country;
-                airportModel.state = item.state;
-
-                model._airportList.Add(airportModel);
-            }
+            var airportList = _airportRepo.GetAirports();
+            model.AirportList = airportList;
+            
             return View(model);
         }
 
@@ -59,6 +46,11 @@ namespace AirplaneTrafficManagement.Controllers
                 airportModel.city = getAirportById.city;
                 airportModel.country = getAirportById.country;
                 airportModel.state = getAirportById.state;
+
+
+                var airportList = _airportRepo.GetAirports();
+                airportModel.AirportList = airportList;
+
 
             return View("EditAirport", airportModel);  
         }

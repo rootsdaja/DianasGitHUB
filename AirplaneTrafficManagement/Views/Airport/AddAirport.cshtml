@@ -10,40 +10,49 @@
     @Html.ValidationSummary()
     @Html.HiddenFor(model => model.idAirport)
 
+    <legend>Add Airport Form </legend>
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+           <div class="form-group">
+            @Html.LabelFor(m => m.airportName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.airportName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.airportName, "", new { @class = "text-danger" })
+                </div>
+           </div>
 
-    <fieldset>
-        <legend>Add Airport Form </legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.airportName)
-                @Html.TextBoxFor(m => m.airportName)
-            </li>
+            <div class="form-group">
+                @Html.LabelFor(m => m.city, htmlAttributes: new { @class = "control-label col-md-2" })
+               <div class="col-md-10">
+                 @Html.TextBoxFor(m => m.city, new { @class="form-control"} )
+                 @Html.ValidationMessageFor(m => m.city, "", new { @class = "text-danger"})
+                </div>
+            </div>
+  
+        <div class="form-group">
+            @Html.LabelFor(m => m.country, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.country, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.country, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-            <li>
-                @Html.LabelFor(m => m.city)
-                @Html.TextBoxFor(m => m.city)
-            </li>
+        <div class="form-group">
+            @Html.LabelFor(m => m.state, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.state, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.state, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-            <li>
-                @Html.LabelFor(m => m.country)
-                @Html.TextBoxFor(m => m.country)
-            </li>
-
-            <li>
-                @Html.LabelFor(m => m.state)
-                @Html.TextBoxFor(m => m.state)
-            </li>
-        </ol>
-    </fieldset>
-
-    <button id="button" value="Add">Add Airport</button>
-
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Add Airport" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 }
 
-@using (Html.BeginForm("Index", "Flight"))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
-
-    <input type="submit" value="Back" />
-}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

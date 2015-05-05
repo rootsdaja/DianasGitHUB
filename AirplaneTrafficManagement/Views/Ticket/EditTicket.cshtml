@@ -1,0 +1,46 @@
+﻿@model AirplaneTrafficManagement.Models.TicketViewModel
+@{
+    ViewBag.Title = "Edit Tickets";
+}
+<h2>Edit Tickets</h2>
+@using (Html.BeginForm("saveChanges", "Ticket"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idTicket)
+
+    <fieldset>
+        <legend>Edit Parameters</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(p => p.seat)
+                @Html.TextBoxFor(p => p.seat)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.availableTickets)
+                @Html.TextBoxFor(p => p.availableTickets)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.totalTickets)
+                @Html.TextBoxFor(p => p.totalTickets)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.@class)
+                @Html.TextBoxFor(p => p.@class)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.roundTrip)
+                @Html.TextBoxFor(p => p.roundTrip)
+            </li>
+        </ol>
+        <button type="submit" class="btn btn-default" value="Submit"> Submit </button>
+    </fieldset>
+}
+@using (Html.BeginForm("Index", "Ticket"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.idFlight)
+
+    <button type="submit" class="btn btn-default" value="Submit"> Back </button>
+}

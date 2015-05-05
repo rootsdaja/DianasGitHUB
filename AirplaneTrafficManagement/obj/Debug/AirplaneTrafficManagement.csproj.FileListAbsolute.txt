@@ -126,3 +126,54 @@ E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement
 E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.dll
 E:\LICENTA\Dianaa-master\src\AirplaneTrafficManagement\AirplaneTrafficManagement\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.pdb
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.dll.config
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.pdb
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\Newtonsoft.Json.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\PagedList.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\PagedList.Mvc.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.Helpers.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.Mvc.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.Razor.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.WebPages.Deployment.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.WebPages.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.WebPages.Razor.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\Newtonsoft.Json.xml
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\PagedList.xml
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\PagedList.Mvc.xml
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.Helpers.xml
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.Mvc.xml
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.Razor.xml
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.WebPages.xml
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.WebPages.Deployment.xml
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\System.Web.WebPages.Razor.xml
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.csprojResolveAssemblyReference.cache
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.dll
+C:\Users\diana.avirvarei\Desktop\Di\Airplane\DeAcasaGITHUB\DianasGitHUB-master\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.pdb
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.dll.config
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\AirplaneTrafficManagement.pdb
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\Newtonsoft.Json.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\PagedList.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\PagedList.Mvc.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.Helpers.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.Mvc.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.Razor.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.WebPages.Deployment.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.WebPages.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.WebPages.Razor.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\Newtonsoft.Json.xml
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\PagedList.xml
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\PagedList.Mvc.xml
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.Helpers.xml
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.Mvc.xml
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.Razor.xml
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.WebPages.xml
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.WebPages.Deployment.xml
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\System.Web.WebPages.Razor.xml
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.dll
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.pdb

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AirplaneTrafficManagement.Repo
 {
-    interface IPassengerRepository
+    public interface IPassengerRepository
     {
         IEnumerable<Passenger> GetPassengers();
         Passenger GetPassengerById(int id);
@@ -14,6 +14,7 @@ namespace AirplaneTrafficManagement.Repo
         void DeletePassenger(int Id);
         void UpdatePassenger(Passenger passenger);
         void Save();
+        void EditPassengerRepo(Passenger passenger);
 
     }
 }

@@ -1,4 +1,5 @@
-﻿@model AirplaneTrafficManagement.Models.FlightViewModel
+﻿@model IEnumerable<AirplaneTrafficManagement.Database.Flight>
+
 @{
     ViewBag.Title = "Flights Search Page";
 }
@@ -51,78 +52,62 @@
                 <div id="divNoOfMovies"></div>*@
 
 
+   <table class="table table-bordered table-hover">
+    <tr>
+        <th><b>Id Flight</b></th>
+        <th><b>Depart Airport Location</b></th>
+        <th><b>Arrival Airport Location</b></th>
+        <th><b>Depart On</b></th>
+        <th><b>Return On</b></th>
+        <th><b>Options</b></th>
+    </tr>
 
-        <style>
-            table, th, td {
-                border: 2px solid black;
-            }
+    @foreach (AirplaneTrafficManagement.Database.Flight item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.idFlight)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Departure.airportName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Arrival.airportName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.departOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.returnOn)
+            </td>
+          
+            <td>
+                @*@{var session = new Common.WebSessionContext();
+                    }
 
-            th, td {
-                padding: 15px;
-            }
-        </style>
+                    @if (session.Admin == true)
+                    {*@
+               @Html.ActionLink("Edit", "EditFlight", "Flight", new { id = item.idFlight }, null) |
+               @Html.ActionLink("Delete", "DeleteFlight", "Flight", new { id = item.idFlight }, null) |
+               @Html.ActionLink("Add", "CreateFlight", "Flight", null) 
+
+                @*<p>@Html.ActionLink("Movie Details", "movieDetail", "Flight", new { id_detail = item.idFlight }, null)</p>*@
+                @*}
+
+                    else
+                    {*@
+                @*@Html.ActionLink("Flight Details", "movieDetail", "Flight", new { id_detail = item.idFlight }, null)
+                    <p>@Html.ActionLink("Reserve Ticket", "CreateTicket", "Flight", new { id = item.idFlight }, null)  </p>*@
+                @*}*@
+            </td>
+        </tr>
+    }
+</table>
 
 
-        <table style="width: 800px">
-            <tr>
-                <td><b>Id Flight</b></td>
-                <td><b>Departure From</b></td>
-                <td><b>Arrive At</b></td>
-                <td><b>Depart On</b></td>
-                <td><b>Return On</b></td>
-                <td><b>Time</b></td>
-                <td><b>Options</b></td>
-            </tr>
 
 
-            @foreach (var item in Model._flightList)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.idFlight)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.departureFrom)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.arriveAt)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.departOn)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.returnOn)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.time)
-                    </td>
-                    <td>
-                        @*@{var session = new Common.WebSessionContext();
-                            }
 
-                            @if (session.Admin == true)
-                            {*@
-
-                        <p>@Html.ActionLink("Edit Flight", "EditFlight", "Flight", new { id = item.idFlight }, null) </p>
-                        <p>@Html.ActionLink("Delete Flight", "DeleteFlight", "Flight", new { id = item.idFlight }, null)</p>
-                        <p>@Html.ActionLink("Add Flight", "CreateFlight", "Flight", null) </p>
-                       
-                        @*<p>@Html.ActionLink("Movie Details", "movieDetail", "Flight", new { id_detail = item.idFlight }, null)</p>*@
-                        @*}
-
-                            else
-                            {*@
-
-                        @*@Html.ActionLink("Flight Details", "movieDetail", "Flight", new { id_detail = item.idFlight }, null)
-                            <p>@Html.ActionLink("Reserve Ticket", "CreateTicket", "Flight", new { id = item.idFlight }, null)  </p>*@
-
-                        @*}*@
-
-                    </td>
-                </tr>
-            }
-
-        </table>
 
 
 
