@@ -29,16 +29,16 @@
                     <li>@Html.ActionLink("Route Network", "Index", "Route")</li>
                     <li>@Html.ActionLink("Airlines", "Index", "Airline")</li>
                     <li>@Html.ActionLink("Airports", "Index", "Airport")</li>
-                @{
+                @*@{
                     var session = new Repo.WebSessionContext();
                 }
 
                 @if (session.Admin==true)
-                {
+                {*@
                  <li>@Html.ActionLink("Clients", "Index", "Client", routeValues: null, htmlAttributes: new { id = "userlink"})</li>
-                }
+                @*}*@
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @*@Html.Partial("_LoginPartial")*@
             </div>
         </div>
     </div>

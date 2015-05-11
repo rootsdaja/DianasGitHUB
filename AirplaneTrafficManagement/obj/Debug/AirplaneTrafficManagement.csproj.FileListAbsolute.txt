@@ -177,3 +177,4 @@ C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\
 C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\bin\Microsoft.Web.Infrastructure.xml
 C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.dll
 C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.pdb
+C:\Users\RiotDi\Documents\Visual Studio 2013\Projects\AirplaneTrafficManagement\obj\Debug\AirplaneTrafficManagement.csprojResolveAssemblyReference.cache
